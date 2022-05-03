@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #171d22;
+}
+textarea, input {
+    padding: .7rem;
+    font-size: 2rem;
+    outline: none;
+    border: 2px solid #171d22;
+    caret-color: #171d22;
+}
+textarea::placeholder {
+    color: grey;
+}
+input {
+    border-top: none;
+    border-left: none;
+    border-right: none
+}
+button {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    padding: 1rem 0;
+    border: none;
+    border-radius: .3rem;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    color: whitesmoke;
+}
+button:hover {
+    transform: scale(1.05);
+}
+.app {
+    background-color: gainsboro;
+    min-height: 100vh;
+    padding: 4rem;
+}
+
+.form-container, .pdf-container {
+    background-color: white;
+    width: 40%;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem;
+}
+.form-container {
+    position: relative;
+    left: 0rem;
+}
+.pdf-container {
+    height: 90vh;
+    position: fixed;
+    top: 4rem;
+    right: 4rem;
+    bottom: 9rem;
+}
+.form {
+    height: 100%;
+    position: relative;
+    left: 0rem;
+}
+.form section {
+    padding-bottom: 3rem;
+}
+.form h2 {
+    font-size: 3rem;
+}
+
+.form-row {
+    padding-top: 2rem;
+    display: grid;
+}
+.form-row label {
+    font-size: 2rem;
+}
+.form-row input, .form-row textarea {
+    width: 100%;
+    resize: none;
+}
+.form-row textarea {
+    height: 10rem;
+}
+.form-row button {
+    background-color: #36454f;
+}
+.clear {
+    background-color: red;
+}
+
+.pdf {
+   height: 100%;
+   font-size: 1.2rem;
+   font-family: 'Times New Roman', Times, serif;
+   overflow: scroll;
+}
+.pdf h1 {
+    font-size: 4rem;
+    text-align: center;
+    color: white;
+    background-color: dodgerblue;
+    padding: 0.5rem;
+    padding-top: 3rem;
+}
+.pdf h2 {
+    font-size: 2rem;
+    color: white;
+    background-color: dodgerblue;
+    text-align: center;
+}
+ul {
+    color: white;
+    background-color: dodgerblue;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+}
+ul li {
+    color: white;
+    font-size: 1.2rem;
+}
+ul li::before {
+    color: rgba(0, 0, 0, 0.6);
+    content: '\25A0';
+    margin-right: 1rem;
+}
+.section-div {
+    padding: 2rem;
+    padding-top: 0rem;
+}
+.section-div section {
+    padding: 2rem 0rem;
+    border-bottom: 0.25rem solid dodgerblue;
+    display: flex;
+    flex-direction: row;
+}
+.section-div h3 {
+    font-size: 2rem;
+    color: dodgerblue;
+    width: 15%;
+    margin-right: 8rem;
+}
+.section-div section p {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.job-container, .education-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.section-div section .job:not(:last-child), .section-div section .study:not(:last-child) {
+    padding-bottom: 2rem;
+}
+.job *, .study * {
+    font-size: 1.2rem;
+    word-wrap: break-word;
+    word-break: break-all;
+    width: 100%;
+}
+.job div, .study div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: inherit;
+}
+h4 {
+    font-weight: 900;
+}
+.job div h4:last-child, .study div h4:last-child {
+    text-align: right;
+}
+.job p {
+    padding-top: 0.25rem;
+}
+.section-div p {
+    font-size: 1.2rem;
+}
+.generate {
+    background-color: green;
+    display: block;
+}
+
+@media print {
+    .app *:not(.pdf-container):not(.pdf-container *) {
+        display: none;
+    }
+   .pdf-container {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       padding: 0;
+   }
+   .app {
+       padding: 0;
+       height: 100%;
+       overflow: hidden;
+   }
+   .pdf {
+       height: 100%;
+   }
+   .generate {
+       display: none;
+   }
+}
